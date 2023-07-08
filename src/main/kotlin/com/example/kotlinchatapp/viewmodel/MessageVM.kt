@@ -1,4 +1,6 @@
-package com.example.kotlinchatapp.model
+package com.example.kotlinchatapp.viewmodel
+
+import java.time.Instant
 
 data class MessageVM(
         val content: String,
