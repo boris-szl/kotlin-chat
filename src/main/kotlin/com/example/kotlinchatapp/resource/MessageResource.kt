@@ -1,24 +1,25 @@
-package com.example.kotlinchatapp.ressource
+package com.example.kotlinchatapp.resource
 
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestParam
+import com.example.kotlinchatapp.viewmodel.MessageVM
 
 
-class MessageRessource(val messageSerivce: MessageService) {
+class MessageResource(val messageService: MessageService) {
 
     @GetMapping
     fun latest(@RequestParam(value = "lastMessageId", defaultValue = "") lastMessageId: String):
         ResponseEntity<List<MessageVM>> {
         val messages = if ( lastMessageId.isNotEmpty() ) {
-            messageSerivce.latest(lastMessageId)
+            messageService.latest(lastMessageId)
         } else {
-            messageSerivce.latest()
+            messageService.latest()
         }
 
-        return if (messsage.isEmpty()) {
+        return if (messages.isEmpty()) {
             with(ResponseEntity.noContent()) {
                 header("lastMessageId", lastMessageId)
                 build<List<MessageVM>>()
@@ -33,6 +34,6 @@ class MessageRessource(val messageSerivce: MessageService) {
 
     @PostMapping
     fun post(@RequestBody message: MessageVM) {
-        messageSerivce.post(message)
+        messageService.post(message)
     }
 }
