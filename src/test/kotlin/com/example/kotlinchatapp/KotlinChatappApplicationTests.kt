@@ -1,7 +1,7 @@
 package com.example.kotlinchatapp
 
-import com.example.kotlinchatapp.domainmodel.ContentType
 import com.example.kotlinchatapp.domainmodel.Message
+import com.example.kotlinchatapp.enum.ContentType
 import com.example.kotlinchatapp.repository.MessageRepository
 import com.example.kotlinchatapp.viewmodel.MessageVM
 import com.example.kotlinchatapp.viewmodel.UserVM
@@ -57,14 +57,14 @@ class KotlinChatappApplicationTests {
                         ),
                         Message(
                                 "*testMessage2*",
-                                ContentType.PLAIN,
+                                ContentType.MARKDOWN,
                                 twoSecondsBeforeNow,
                                 "test",
                                 "http://test.com"
                         ),
                         Message(
                                 "*testMessage3*",
-                                ContentType.PLAIN,
+                                ContentType.MARKDOWN,
                                 twoSecondsBeforeNow,
                                 "test",
                                 "http://test.com"
