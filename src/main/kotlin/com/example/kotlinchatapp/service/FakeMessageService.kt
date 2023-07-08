@@ -1,6 +1,12 @@
 package com.example.kotlinchatapp.service
 
+import com.example.kotlinchatapp.viewmodel.MessageVM
+import com.example.kotlinchatapp.viewmodel.UserVM
+import com.github.javafaker.Faker
 import org.springframework.stereotype.Service
+import java.net.URL
+import java.time.Instant
+import kotlin.random.Random
 
 @Service
 class FakeMessageService : MessageService {
