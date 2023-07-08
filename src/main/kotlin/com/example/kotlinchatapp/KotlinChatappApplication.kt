@@ -8,4 +8,5 @@ class KotlinChatappApplication
 
 fun main(args: Array<String>) {
     runApplication<KotlinChatappApplication>(*args)
+
 }
