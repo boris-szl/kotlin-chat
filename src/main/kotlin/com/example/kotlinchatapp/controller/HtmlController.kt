@@ -11,6 +11,5 @@ class HtmlController(val messageService: MessageService) {
         model["messages"] = messages
         model["lastMessageId"] = messages.lastOrNull()?.id ?: "" // safe call operator, elvis operator
         return "chat"
-
     }
 }
